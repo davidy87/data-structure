@@ -43,6 +43,14 @@ public class Stack<E> {
         return cur.elem;
     }
 
+    public E peek() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
+        return last.elem;
+    }
+
     public boolean isEmpty() {
         return size == 0 && first == null && last == null;
     }

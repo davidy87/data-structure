@@ -6,6 +6,7 @@ public class StackTest {
         System.out.println("[Starting stack test]");
         pushTest();
         popTest();
+        peekTest();
     }
 
     private void pushTest() {
@@ -37,6 +38,19 @@ public class StackTest {
             System.out.println("After: " + stack);
         }
 
+        System.out.println();
+    }
+
+    private void peekTest() {
+        System.out.println("--- Peek Test ---");
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = 0; i < 10; i++) {
+            stack.push(i);
+        }
+
+        System.out.println("Before: " + stack);
+        System.out.println("Peek: " + stack.peek());
         System.out.println();
     }
 }

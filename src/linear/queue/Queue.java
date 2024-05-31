@@ -41,6 +41,14 @@ public class Queue<E> {
         return cur.elem;
     }
 
+    public E peek() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
+        return first.elem;
+    }
+
     public boolean isEmpty() {
         return size == 0 && first == null && last == null;
     }

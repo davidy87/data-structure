@@ -6,6 +6,7 @@ public class QueueTest {
         System.out.println("[Starting queue test]");
         enqueueTest();
         dequeueTest();
+        peekTest();
     }
 
     private void enqueueTest() {
@@ -37,6 +38,19 @@ public class QueueTest {
             System.out.println("After: " + queue);
         }
 
+        System.out.println();
+    }
+
+    private void peekTest() {
+        System.out.println("--- Peek Test ---");
+        Queue<Integer> queue = new Queue<>();
+
+        for (int i = 0; i < 10; i++) {
+            queue.enqueue(i);
+        }
+
+        System.out.println("Before: " + queue);
+        System.out.println("Peek: " + queue.peek());
         System.out.println();
     }
 }
