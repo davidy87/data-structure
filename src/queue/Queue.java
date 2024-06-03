@@ -1,8 +1,8 @@
-package linear.stack;
+package queue;
 
 import java.util.NoSuchElementException;
 
-public class Stack<E> {
+public class Queue<E> {
 
     private Node<E> first;
 
@@ -10,9 +10,9 @@ public class Stack<E> {
 
     private int size;
 
-    public void push(E elem) {
+    public void enqueue(E elem) {
         final Node<E> l = last;
-        final Node<E> newNode = new Node<>(elem, l, null);
+        final Node<E> newNode = new Node<>(elem, null);
         last = newNode;
 
         if (l == null) {
@@ -24,18 +24,16 @@ public class Stack<E> {
         size++;
     }
 
-    public E pop() {
+    public E dequeue() {
         if (isEmpty()) {
             throw new NoSuchElementException();
         }
 
-        final Node<E> cur = last;
-        last = last.prev;
+        Node<E> cur = first;
+        first = first.next;
 
-        if (last == null) {
-            first = null;
-        } else {
-            last.next = null;
+        if (first == null) {
+            last = null;
         }
 
         size--;
@@ -48,7 +46,7 @@ public class Stack<E> {
             throw new NoSuchElementException();
         }
 
-        return last.elem;
+        return first.elem;
     }
 
     public boolean isEmpty() {
@@ -72,13 +70,10 @@ public class Stack<E> {
 
         E elem;
 
-        Node<E> prev;
-
         Node<E> next;
 
-        public Node(E elem, Node<E> prev, Node<E> next) {
+        public Node(E elem, Node<E> next) {
             this.elem = elem;
-            this.prev = prev;
             this.next = next;
         }
     }

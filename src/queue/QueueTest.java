@@ -1,15 +1,15 @@
-package linear.queue;
+package queue;
 
 public class QueueTest {
 
-    public void test() {
+    public static void test() {
         System.out.println("[Starting queue test]");
         enqueueTest();
         dequeueTest();
         peekTest();
     }
 
-    private void enqueueTest() {
+    private static void enqueueTest() {
         System.out.println("--- Enqueue Test ---");
         Queue<Integer> queue = new Queue<>();
         System.out.println("Before: " + queue);
@@ -23,7 +23,7 @@ public class QueueTest {
         System.out.println();
     }
 
-    private void dequeueTest() {
+    private static void dequeueTest() {
         System.out.println("--- Dequeue Test ---");
         Queue<Integer> queue = new Queue<>();
 
@@ -41,7 +41,7 @@ public class QueueTest {
         System.out.println();
     }
 
-    private void peekTest() {
+    private static void peekTest() {
         System.out.println("--- Peek Test ---");
         Queue<Integer> queue = new Queue<>();
 
@@ -52,5 +52,9 @@ public class QueueTest {
         System.out.println("Before: " + queue);
         System.out.println("Peek: " + queue.peek());
         System.out.println();
+    }
+
+    public static void main(String[] args) {
+        test();
     }
 }

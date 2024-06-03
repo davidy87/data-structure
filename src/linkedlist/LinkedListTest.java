@@ -1,14 +1,14 @@
-package linear.linkedlist;
+package linkedlist;
 
 public class LinkedListTest {
 
-    public void test() {
+    public static void test() {
         addition();
         insertion();
         deletion();
     }
 
-    private void addition() {
+    private static void addition() {
         System.out.println("--- Add Test ---");
         LinkedList<Integer> list = new LinkedList<>();
         before(list);
@@ -20,7 +20,7 @@ public class LinkedListTest {
         after(list);
     }
 
-    private void insertion() {
+    private static void insertion() {
         System.out.println("--- Insert Test ---");
         LinkedList<Integer> list = new LinkedList<>();
 
@@ -39,7 +39,7 @@ public class LinkedListTest {
         after(list);
     }
 
-    private void deletion() {
+    private static void deletion() {
         System.out.println("--- Remove Test ---");
         LinkedList<Integer> list = new LinkedList<>();
 
@@ -58,21 +58,25 @@ public class LinkedListTest {
         after(list);
     }
 
-    private void printResult(LinkedList<Integer> list) {
+    private static void printResult(LinkedList<Integer> list) {
         for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i) + " ");
         }
     }
 
-    private void after(LinkedList<Integer> list) {
+    private static void after(LinkedList<Integer> list) {
         System.out.print("After: ");
         printResult(list);
         System.out.println("\n");
     }
 
-    private void before(LinkedList<Integer> list) {
+    private static void before(LinkedList<Integer> list) {
         System.out.print("Before: ");
         printResult(list);
         System.out.println();
+    }
+
+    public static void main(String[] args) {
+        test();
     }
 }

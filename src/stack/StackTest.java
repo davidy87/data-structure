@@ -1,15 +1,15 @@
-package linear.stack;
+package stack;
 
 public class StackTest {
 
-    public void test() {
+    public static void test() {
         System.out.println("[Starting stack test]");
         pushTest();
         popTest();
         peekTest();
     }
 
-    private void pushTest() {
+    private static void pushTest() {
         System.out.println("--- Push Test ---");
         Stack<Integer> stack = new Stack<>();
         System.out.println("Before: " + stack);
@@ -23,7 +23,7 @@ public class StackTest {
         System.out.println();
     }
 
-    private void popTest() {
+    private static void popTest() {
         System.out.println("--- Pop Test ---");
         Stack<Integer> stack = new Stack<>();
 
@@ -41,7 +41,7 @@ public class StackTest {
         System.out.println();
     }
 
-    private void peekTest() {
+    private static void peekTest() {
         System.out.println("--- Peek Test ---");
         Stack<Integer> stack = new Stack<>();
 
@@ -52,5 +52,9 @@ public class StackTest {
         System.out.println("Before: " + stack);
         System.out.println("Peek: " + stack.peek());
         System.out.println();
+    }
+
+    public static void main(String[] args) {
+        test();
     }
 }
